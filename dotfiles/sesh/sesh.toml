@@ -1,0 +1,33 @@
+sort_order = ["tmux", "tmuxinator", "config", "zoxide"]
+dir_length = 2
+
+[[session]]
+name = "Home"
+path = "~/"
+
+[[session]]
+name = "tmux-sesh"
+path = "~/.config/sesh"
+startup_command = "nvim ./sesh.toml"
+
+[[session]]
+name = "notes"
+path = "~/documents/notes"
+startup_command = "nvim ."
+
+[[session]]
+name = "New"
+path = "~/"
+preview_command = "eza --all --git --icons --color=always {}"
+
+[[session]]
+name = "fresh"
+path = "~"
+startup_command = """
+"""
+
+[[session]]
+name = "new-llm"
+path = "~/dev/llm"
+startup_command = "bash -lc 'read -rp \"New folder name: \" name; mkdir -p \"$name\"; cd \"$name\"; exec \"$SHELL\"'"
+

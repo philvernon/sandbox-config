@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Local tools</title>
+  <style>
+    @layer base {
+      :root { color-scheme: dark; font-family: system-ui, sans-serif; }
+      .theme-wireframe {
+        --theme-bg: #111111;
+        --theme-fg: #eeeeee;
+        --theme-card: #111111;
+        --theme-card-fg: #eeeeee;
+        --theme-muted-fg: #b8b8b8;
+        --theme-primary: #eeeeee;
+        --theme-primary-fg: #111111;
+        --theme-border: #eeeeee;
+        --theme-ring: #eeeeee;
+        --theme-border-width: 2px;
+        --theme-radius-sm: 0px;
+        --theme-radius-md: 0px;
+        --theme-radius-lg: 0px;
+        --theme-shadow-float: none;
+        --theme-shadow-overlay: none;
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 64px 24px; background: var(--theme-bg); color: var(--theme-fg); }
+    main { max-width: 600px; margin: 0 auto; }
+    header { margin-bottom: 28px; }
+    h1 { margin: 0 0 8px; font-size: 24px; font-weight: 600; }
+    p { margin: 0; line-height: 1.6; }
+    header p, footer { color: var(--theme-muted-fg); }
+    nav { display: grid; gap: 12px; }
+    a { display: block; padding: 20px; border: var(--theme-border-width) solid var(--theme-border); border-radius: var(--theme-radius-md); color: var(--theme-card-fg); text-decoration: none; background: var(--theme-card); box-shadow: var(--theme-shadow-float); }
+    a:hover { background: var(--theme-primary); color: var(--theme-primary-fg); }
+    a:focus-visible { outline: 2px solid var(--theme-ring); outline-offset: 4px; }
+    .title { display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 18px; font-weight: 600; }
+    .description { display: block; margin-top: 8px; font-size: 15px; line-height: 1.5; }
+    .port { font-size: 13px; font-weight: 400; white-space: nowrap; }
+    footer { margin-top: 24px; font-size: 13px; line-height: 1.6; }
+  </style>
+  <script src="links.js" defer></script>
+</head>
+<body class="theme-wireframe">
+  <main>
+    <header>
+      <h1>Local tools</h1>
+      <p>Your tools, running on this machine.</p>
+    </header>
+    <nav aria-label="Tools">
+      <a href="http://127.0.0.1:8765/" data-port="8765">
+        <span class="title">ctools <span class="port">8765 <span aria-hidden="true">↗</span></span></span>
+        <span class="description">Browse and search your agent conversation history.</span>
+      </a>
+      <a href="http://127.0.0.1:30141/" data-port="30141">
+        <span class="title">Pi Web <span class="port">30141 <span aria-hidden="true">↗</span></span></span>
+        <span class="description">Open your Pi sessions in the browser.</span>
+      </a>
+    </nav>
+    <footer>Private tools. Only use on a trusted network.</footer>
+  </main>
+</body>
+</html>

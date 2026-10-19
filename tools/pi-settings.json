@@ -1,0 +1,20 @@
+{
+  "packages": [
+    "npm:@gotgenes/pi-permission-system@40.2.2",
+    "npm:@juicesharp/rpiv-ask-user-question@2.13.8",
+    "npm:@juicesharp/rpiv-todo@2.13.8",
+    "npm:@quintinshaw/pi-dynamic-workflows@3.14.0",
+    "npm:@xynogen/pix-footer@0.2.9",
+    "npm:@yuriteixeira/pi-muxr@0.4.4",
+    "npm:context-mode@1.0.169",
+    "npm:design-playbook@0.25.4",
+    "npm:ecc-universal@2.2.3",
+    "npm:pi-catppuccin@0.1.0",
+    "npm:pi-lens@4.4.3",
+    "npm:pi-rtk-optimizer@0.9.0",
+    "npm:pi-tab-focus@1.0.2",
+    "npm:pi-tool-display@0.5.0",
+    "npm:pi-vim@0.14.2",
+    "npm:pi-web-access@0.41.0"
+  ]
+}

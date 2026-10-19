@@ -1,0 +1,38 @@
+[flavor]
+dark = "catppuccin-mocha"
+light = "catppuccin-mocha"
+
+[mgr]
+cwd = { fg = "blue", bold = true }
+border_symbol = " "
+
+[indicator]
+parent  = { reversed = true }
+current = { reversed = true }
+preview = { reversed = true }
+padding = { open = " ", close = " " }
+
+[tabs]
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+[mode]
+normal_main = { fg = "white", bg = "reset", bold = true }
+normal_alt  = { fg = "white", bg = "reset" }
+
+select_main = { fg = "red", bg = "reset", bold = true }
+select_alt  = { fg = "red", bg = "reset" }
+
+unset_main = { fg = "red", bg = "reset", bold = true }
+unset_alt  = { fg = "red", bg = "reset" }
+
+[status]
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+[icon]
+globs = []
+dirs = []
+files = []
+exts = []
+conds = []

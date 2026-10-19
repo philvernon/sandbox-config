@@ -1,0 +1,11 @@
+require("user.options")
+require("user.plugins-lazy")
+require("user.keymaps")
+-- require("user.godot-setup")
+require("extra")
+
+require("user.lsp.lsp-mason")
+require("user.lsp.config")
+require("user.lsp.vue")
+require("user.lsp.rust")
+require("user.lsp.keymaps")

@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+sesh connect "$(
+  sesh list -t --icons | fzf \
+    --no-sort --ansi \
+    --border-label ' sessions ' \
+    --prompt '🪟  ' \
+    --header '  open tmux sessions only' \
+    --layout reverse \
+    --bind 'tab:down,btab:up' \
+    --preview-window 'right:55%' \
+    --preview 'sesh preview {}'
+)"

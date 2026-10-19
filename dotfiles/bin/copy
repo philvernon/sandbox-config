@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+text="$(tmux capture-pane -p -S -200)"
+block="$(
+  printf '%s\n' "$text" | awk '
+    /^❯ / {
+      prompts[++n] = NR
+    }
+    {
+      lines[NR] = $0
+    }
+    END {
+      if (n < 2)
+        exit 1
+
+      start = prompts[n - 1]
+      end   = prompts[n] - 2
+
+      for (i = start; i <= end; i++)
+        print lines[i]
+    }
+  '
+)"
+if command -v pbcopy > /dev/null
+then
+  printf '%s\n' "$block" | pbcopy
+elif command -v wl-copy > /dev/null
+then
+  printf '%s\n' "$block" | wl-copy
+elif command -v xclip > /dev/null
+then
+  printf '%s\n' "$block" | xclip -selection clipboard
+else
+  printf '%s\n' "$block" | tmux load-buffer -
+fi

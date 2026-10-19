@@ -1,0 +1,17 @@
+getantidote/zsh-defer
+getantidote/use-omz
+ohmyzsh/ohmyzsh path:lib
+
+romkatv/powerlevel10k
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/docker
+ohmyzsh/ohmyzsh path:plugins/docker-compose
+ohmyzsh/ohmyzsh path:plugins/extract
+ohmyzsh/ohmyzsh path:plugins/rust
+
+zsh-users/zsh-completions path:src kind:fpath
+
+Aloxaf/fzf-tab
+hlissner/zsh-autopair
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting

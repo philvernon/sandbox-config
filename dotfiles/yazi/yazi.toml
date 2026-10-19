@@ -1,0 +1,14 @@
+[mgr]
+show_hidden = true
+ratio = [1, 3, 4]
+linemode = "mtime"
+
+[tabs]
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+[status]
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+

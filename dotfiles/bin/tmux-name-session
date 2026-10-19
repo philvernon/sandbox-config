@@ -1,0 +1,24 @@
+#!/usr/bin/env zsh
+
+dir="$PWD"
+
+git_root=$(git -C "$dir" rev-parse --show-toplevel 2>/dev/null)
+
+if [[ -n "$git_root" ]]; then
+  base="${git_root:t}"
+  dir="$git_root"
+else
+  base="${dir:t}"
+fi
+
+[[ -z "$base" ]] && base="home"
+
+name="$base"
+n=2
+
+while tmux has-session -t "=$name" 2>/dev/null; do
+  name="${base}-${n}"
+  ((n++))
+done
+
+exec tmux new-session -s "$name" -c "$dir"

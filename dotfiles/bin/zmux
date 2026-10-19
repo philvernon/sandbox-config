@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+target="$(zoxide query -- "$@")" || return
+
+# Away from ~, behave like normal zoxide
+if [[ "$PWD" != "$HOME" ]]; then
+  builtin cd "$target"
+  return
+fi
+
+root="$(git -C "$target" rev-parse --show-toplevel 2>/dev/null)"
+
+if [[ -n "$root" ]]; then
+  target="$root"
+  name="${root:t}"
+else
+  name="${target:t}"
+fi
+
+# Create session if it doesn't already exist
+if ! tmux has-session -t "=$name" 2>/dev/null; then
+  tmux new-session -d -s "$name" -c "$target"
+fi
+
+# Jump to it
+if [[ -n "$TMUX" ]]; then
+  tmux switch-client -t "=$name"
+else
+  tmux attach-session -t "=$name"
+fi

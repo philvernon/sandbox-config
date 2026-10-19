@@ -1,0 +1,15 @@
+result
+result-*
+__pycache__/
+*.pyc
+node_modules/
+.env
+.env.*
+*.qcow2
+*.img
+*.pem
+*.key
+id_ed25519*
+*.log
+
+.superpowers/

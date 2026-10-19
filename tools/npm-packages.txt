@@ -1,0 +1,3 @@
+@earendil-works/pi-coding-agent@1.3.0
+@agegr/pi-web@0.12.2
+@yuriteixeira/pi-muxr@0.4.4
