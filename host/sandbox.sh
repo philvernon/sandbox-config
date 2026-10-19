@@ -44,8 +44,8 @@ if systemctl --user is-active --quiet "$unit"; then
   echo 'Sandbox is already running. Use: nix run .#sandbox -- ssh'
   exit 0
 fi
-if [[ -n "$(ss -H -ltn '( sport = :2222 or sport = :8080 or sport = :8765 or sport = :30141 )')" ]]; then
-  echo 'A required host port (2222, 8080, 8765, 30141) is already in use; nothing started.' >&2
+if [[ -n "$(ss -H -ltn '( sport = :2222 or sport = :18080 or sport = :8765 or sport = :30141 )')" ]]; then
+  echo 'A required host port (2222, 18080, 8765, 30141) is already in use; nothing started.' >&2
   exit 1
 fi
 if [[ ! -r /dev/kvm || ! -w /dev/kvm ]]; then
@@ -88,4 +88,4 @@ echo 'VM starting. First boot creates an isolated Nix-store image and can take a
 echo 'Status: nix run .#sandbox -- status'
 echo 'Console: nix run .#sandbox -- logs'
 echo 'Connect when ready: nix run .#sandbox -- ssh'
-echo 'Dashboard on the host: http://127.0.0.1:8080'
+echo 'Dashboard on the host: http://127.0.0.1:18080'

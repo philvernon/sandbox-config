@@ -107,21 +107,22 @@ Open these **on the host**:
 
 | Tool | URL |
 | --- | --- |
-| Dashboard | <http://127.0.0.1:8080> |
+| Dashboard | <http://127.0.0.1:18080> |
 | ctools history browser | <http://127.0.0.1:8765> |
 | Pi Web | <http://127.0.0.1:30141> |
 
 All forwarded host ports bind to **loopback only**, including SSH on 2222. A busy
 port causes a clear refusal, not termination or adoption of another process.
+The dashboard forwards host **18080** to guest **8080**; host port 8080 is not used.
 
 From your laptop, tunnel through the host (replace `homelab` as appropriate):
 
 ```bash
-ssh -N -L 8080:127.0.0.1:8080 -L 8765:127.0.0.1:8765 \
+ssh -N -L 18080:127.0.0.1:18080 -L 8765:127.0.0.1:8765 \
   -L 30141:127.0.0.1:30141 phil@homelab
 ```
 
-Then open <http://127.0.0.1:8080> on the laptop. The dashboard links follow the
+Then open <http://127.0.0.1:18080> on the laptop. The dashboard links follow the
 hostname you opened it with. Pi Web and ctools expose private sessions/control;
 do not publish these unauthenticated interfaces to the internet. You can set
 `PI_WEB_PASSWORD=...` in the guest's `~/.config/sandbox/pi-web.env` and restart

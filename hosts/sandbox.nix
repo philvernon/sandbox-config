@@ -25,7 +25,7 @@
       guest.port = p.guest;
     }) [
       { host = 2222; guest = 22; }
-      { host = 8080; guest = 8080; }
+      { host = 18080; guest = 8080; }
       { host = 8765; guest = 8765; }
       { host = 30141; guest = 30141; }
     ];
