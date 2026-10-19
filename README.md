@@ -3,6 +3,7 @@
 A NixOS coding-agent VM for an **x86_64 Linux host**, with development tools,
 Phil's terminal/editor configs, Pi, Codex, Pi Web and ctools. Apps install
 automatically; Pi and editor plugins use their normal package managers.
+See [installed software](SOFTWARE.md).
 
 ## 1. Prepare your Arch host
 
