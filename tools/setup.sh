@@ -21,6 +21,11 @@ fi
 # Never retain a success marker across an interrupted or failed update.
 rm -f "$stamp"
 
+# TPM's standard installation; it manages the plugins declared in tmux.conf.
+if [[ ! -e "$HOME/.config/tmux/plugins/tpm/tpm" ]]; then
+  git clone --depth 1 https://github.com/tmux-plugins/tpm.git "$HOME/.config/tmux/plugins/tpm"
+fi
+
 mapfile -t applications < '@npmPackages@'
 npm install --global "${applications[@]}"
 uv tool install --python python3 'ctxttools[mcp]==0.3.1'

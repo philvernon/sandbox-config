@@ -42,9 +42,6 @@ in {
       chmod -R u+w ${lib.escapeShellArg seed}
     fi
     install -d -m 0755 ${home}/projects ${home}/.pi/agent ${home}/.local/bin ${seed}/tmux/plugins
-    if [ ! -e ${seed}/tmux/plugins/tpm ]; then
-      ln -s ${pkgs.tmuxPlugins.tpm}/share/tmux-plugins/tpm ${seed}/tmux/plugins/tpm
-    fi
     if [ ! -e ${home}/.pi/agent/settings.json ]; then
       install -m 0600 ${../tools/pi-settings.json} ${home}/.pi/agent/settings.json
     fi
