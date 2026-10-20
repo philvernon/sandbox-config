@@ -85,7 +85,7 @@
     go python3 uv pipx
     gcc gnumake cmake ninja pkg-config openssl.dev
     ripgrep fd fzf zoxide bat btop htop shellcheck shfmt
-    neovim tmux sesh yazi ranger antidote
+    neovim tree-sitter tmux sesh yazi ranger antidote
     rtk sqlite postgresql
     codex
   ];
