@@ -1,7 +1,9 @@
 # Agent sandbox
 
-Set up a NixOS coding-agent VM on an x86_64 Linux host. Development tools,
-terminal/editor configuration and agent tools are listed in [SOFTWARE.md](SOFTWARE.md).
+[SOFTWARE.md](SOFTWARE.md) catalogues the current sandbox's dev tools,
+configuration and agent tools. This repo also defines a reproducible NixOS
+coding-agent VM for an x86_64 Linux host; the instructions below are for that VM,
+not a description of the current sandbox.
 
 ## Prepare the Arch host
 
