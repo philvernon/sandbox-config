@@ -12,7 +12,7 @@ let
     runtimeInputs = with pkgs; [ nodejs_24 python3 uv yazi git gcc gnumake pkg-config coreutils cacert ];
     text = builtins.replaceStrings
       [ "@revision@" "@npmPackages@" ]
-      [ revision (toString ./npm-packages.txt) ]
+      [ revision "${./npm-packages.txt}" ]
       (builtins.readFile ./setup.sh);
   };
 in {
