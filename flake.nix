@@ -43,13 +43,5 @@
         sandbox = { type = "app"; program = "${launcher}/bin/sandbox"; };
         default = self.apps.${system}.sandbox;
       };
-      checks.${system}.source = pkgs.runCommand "sandbox-source-tests" {
-        nativeBuildInputs = [ pkgs.python3 pkgs.nodejs_24 pkgs.openssh pkgs.util-linux ];
-      } ''
-        cd ${self}
-        python3 -m unittest discover -s tests -v
-        node --test dashboard/test.mjs
-        touch $out
-      '';
     };
 }

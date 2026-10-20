@@ -82,6 +82,3 @@ Start again with `nix run .#sandbox`, including after a host reboot. The disk an
 SSH key persist under `${XDG_STATE_HOME:-~/.local/state}/nix-sandbox/main/`.
 The VM does not mount your host files or credentials, but it has outbound network
 access. Logins and guest edits persist; existing seeded dotfiles aren't overwritten.
-
-**Status:** configuration builds checked; full boot/runtime acceptance is still
-in progress.
