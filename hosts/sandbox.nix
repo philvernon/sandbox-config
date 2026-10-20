@@ -16,6 +16,9 @@
     # The generated runner otherwise shares the host Nix store and exchange dirs.
     useNixStoreImage = true;
     mountHostNixStore = false;
+    # The private store image needs a writable layer for the guest Nix daemon.
+    writableStore = true;
+    writableStoreUseTmpfs = false;
     useHostCerts = false;
     sharedDirectories = lib.mkForce {};
     forwardPorts = map (p: {
